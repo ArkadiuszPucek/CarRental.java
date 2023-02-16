@@ -63,16 +63,6 @@ class RentalControl {
 
     private void printClients() {
          printer.printClients(carStorage.getSortedClients(RentalControl::printClients));
-
-         //przed referencją do metody
-//        printer.printClients(carStorage.getSortedClients((c1, c2) -> c1.getLastName().compareToIgnoreCase(c2.getLastName())));
-         //Przed lambdą
-//        printer.printClients(carStorage.getSortedClients(new Comparator<CarRentalClients>() {
-//            @Override
-//            public int compare(CarRentalClients c1, CarRentalClients c2) {
-//                return c1.getLastName().compareToIgnoreCase(c2.getLastName());
-//            }
-//        }));
     }
 
     private void addClient() {
@@ -136,12 +126,6 @@ class RentalControl {
         printer.printCars(carStorage.getSortedCars(new ProductionDateComparator()));
 
     }
-
-//    private Car[] getSortedCarsByDate() {
-//        Car[] cars = carStorage.getCars();
-//        Arrays.sort(cars, new ProductionDateComparator());
-//        return cars;
-//    }
     
     private void exit() {
         try {
