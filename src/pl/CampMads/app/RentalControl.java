@@ -29,11 +29,12 @@ class RentalControl {
             carStorage = new CarsStorage();
         }
     }
-
+//print clients
     private static int printClients(CarRentalClients c1, CarRentalClients c2) {
         return c1.getLastName().compareToIgnoreCase(c2.getLastName());
     }
 
+//option switch
     public void controlLoop(){
         Option option;
         do {
