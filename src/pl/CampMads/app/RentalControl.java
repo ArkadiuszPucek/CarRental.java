@@ -9,8 +9,8 @@ import pl.CampMads.model.Car;
 import pl.CampMads.model.CarRentalClients;
 import pl.CampMads.model.CarsStorage;
 import pl.CampMads.model.comparator.ProductionDateComparator;
-
 import java.util.InputMismatchException;
+
 
 class RentalControl {
     private ConsolePrinter printer = new ConsolePrinter();
@@ -34,7 +34,7 @@ class RentalControl {
         return c1.getLastName().compareToIgnoreCase(c2.getLastName());
     }
 
-    public void  controlLoop(){
+    public void controlLoop(){
         Option option;
         do {
             printOptions();
@@ -51,7 +51,6 @@ class RentalControl {
             }
         }while (option != Option.EXIT);
     }
-
 //    private void searchCar() {
 //        printer.printLine("Podaj markę samochodów którą chcesz wyszukać:");
 //        String carBrand = dataReader.getString();
