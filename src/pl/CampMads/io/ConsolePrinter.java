@@ -1,7 +1,6 @@
 package pl.CampMads.io;
 import pl.CampMads.model.Car;
 import pl.CampMads.model.CarRentalClients;
-
 import java.util.Collection;
 import java.util.Objects;
 
