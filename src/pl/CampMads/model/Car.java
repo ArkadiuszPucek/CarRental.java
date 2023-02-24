@@ -165,12 +165,7 @@ public class Car implements Serializable, Comparable<Car>, CsvConvertible {
     @Override
     public int compareTo(Car o) {
         return carBrand.compareTo(o.carBrand);
-    }
-
-//    @Override
-//    public String toCsv() {//tu namodziłem
-//        return null;
-//    }
+    } 
 }
 
 
