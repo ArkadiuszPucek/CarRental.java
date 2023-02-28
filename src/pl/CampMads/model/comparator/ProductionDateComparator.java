@@ -17,6 +17,5 @@ public class ProductionDateComparator implements Comparator<Car> {
         Year i1 = c1.getYearOfProduction();
         Year i2 = c2.getYearOfProduction();
         return i1.compareTo(i2);
-//        return c1.getDateOfProduction().compareTo(c2.getDateOfProduction());
     }
 }
