@@ -108,23 +108,4 @@ public class CsvFileManager implements FileManager{
         String drivingLicense = split[3];
         return new CarRentalClients(firstName, lastName, pesel, drivingLicense);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
