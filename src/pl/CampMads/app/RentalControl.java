@@ -13,16 +13,18 @@ import java.util.InputMismatchException;
 
 
 class RentalControl {
-    private ConsolePrinter printer = new ConsolePrinter();
-    private DataReader dataReader = new DataReader(printer);
-    private FileManager fileManager;
-    private CarsStorage carStorage;
+    private final ConsolePrinter printer;
+    private final DataReader dataReader;
+    private final FileManager fileManager;
+    private final CarsStorage carStorage;
 
      RentalControl() {
-        fileManager = new FileManagerBuilder(printer,dataReader).build();
+        this.printer = new ConsolePrinter();
+        this.dataReader = new DataReader(printer);
+        this.fileManager = new FileManagerBuilder(printer, dataReader).build();
         try {
-        carStorage = fileManager.importData();
-        printer.printLine("Zaimportowane dane z pliku");
+            carStorage = fileManager.importData();
+            printer.printLine("Zaimportowane dane z pliku");
         } catch (DataImportException | InvalidDataException e){
             printer.printLine(e.getMessage());
             printer.printLine("Zainicjowano nową bazę.");
