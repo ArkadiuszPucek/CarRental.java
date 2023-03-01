@@ -29,29 +29,29 @@ class RentalControl {
             carStorage = new CarsStorage();
         }
     }
-//print clients
+// Print clients sorted by last name
     private static int printClients(CarRentalClients c1, CarRentalClients c2) {
         return c1.getLastName().compareToIgnoreCase(c2.getLastName());
     }
 
-//option switch
+ // Control loop to handle user input
     public void controlLoop(){
-        Option option;
-        do {
-            printOptions();
-            option = getOption();
-            switch (option) {
-                case ADD_CAR -> addCar();
-                case PRINT_CARS -> printCars();
-                case DELETE_CAR -> deleteCar();
-//                case SEARCH_CAR -> searchCar();
-                case ADD_CLIENT -> addClient();
-                case PRINT_CLIENTS -> printClients();
-                case EXIT -> exit();
-                default -> printer.printLine("Nieznana opcja! Wprowadź ponownie. ");
-            }
+    Option option;
+    do {
+        printOptions();
+        option = getOption();
+        switch (option) {
+            case ADD_CAR -> addCar();
+            case PRINT_CARS -> printCars();
+            case DELETE_CAR -> deleteCar();
+            case ADD_CLIENT -> addClient();
+            case PRINT_CLIENTS -> printClients();
+            case EXIT -> exit();
+            default -> printer.printLine("Nieznana opcja! Wprowadź ponownie. ");
+         }
         }while (option != Option.EXIT);
     }
+
 //    private void searchCar() {
 //        printer.printLine("Podaj markę samochodów którą chcesz wyszukać:");
 //        String carBrand = dataReader.getString();
@@ -62,7 +62,7 @@ class RentalControl {
 //    }
 
     private void printClients() {
-         printer.printClients(carStorage.getSortedClients(RentalControl::printClients));
+        printer.printClients(carStorage.getSortedClients((c1, c2) -> c1.getLastName().compareToIgnoreCase(c2.getLastName())));
     }
 
     private void addClient() {
